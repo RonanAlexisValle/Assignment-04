@@ -1,15 +1,14 @@
-#This asks the user the amount of money they have and how much the apple costs
+#This asks the user on how many apples and oranges they want to buy
 def userInput():
-    Money = int(input("Amount of money you have: "))
-    applePrice = int(input("How much does apple cost?: "))
-    applesinTotal = Money//applePrice
-    change = Money%applePrice
-    return Money, applePrice, applesinTotal, change
-    
-#This displays how many apples the user can buy and its change if there is any
-def letuserKnow(Money, applePrice, applesinTotal, change):
-    print(f"You can buy {applesinTotal} apples and your change is {change} pesos.")
+    boughtapple_func = int(input("How many apples you want to buy: "))
+    boughtorange_func = int(input("How many oranges you want to buy: "))
+    totalprice_func = ((boughtapple_func*20) + (boughtorange_func*25))
+    return boughtapple_func, boughtorange_func, totalprice_func
 
-Money, applePrice, applesinTotal, change = userInput()
+#This shows the total amount of the user needed to pay
+def displayOutput(boughtapple_func, boughtorange_func, totalprice_func):
+    print(f"Total amount is {totalprice_func}")
 
-letuserKnow(Money, applePrice, applesinTotal, change)
+boughtapple_func, boughtorange_func, totalprice_func = userInput()
+
+displayOutput(boughtapple_func, boughtorange_func, totalprice_func)
